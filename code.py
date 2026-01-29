@@ -5,7 +5,7 @@ Codigo de LuisMSB
 
 import kivy
 from kivy.app import App
-from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.gridlayout import GridLayout
 from kivy.uix.button import Button
 from kivy.lang import Builder
 from kivy.config import Config
@@ -15,7 +15,7 @@ from kivy.config import Config
 Config.set ('graphics', 'width', 720)
 Config.set ('graphics', 'height', 1080)
 
-class Contenedor (BoxLayout):
+class Contenedor (GridLayout):
     None
 
 Builder.load_file ('interface.kv')
