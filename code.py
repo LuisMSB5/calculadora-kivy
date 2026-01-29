@@ -1,16 +1,16 @@
 import kivy
 from kivy.app import App
-from kivy.uix.boxlayout import Boxlayout
+from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.lang import Builder
 from kivy.config import Config
 
 #agregar despues el tamaño
 
-class Contenedor (Boxlayout):
+class Contenedor (BoxLayout):
     None
 
-Builder.load_File ('interface.kv')
+Builder.load_file ('interface.kv')
 
 class MainApp(App):
 
@@ -21,4 +21,3 @@ class MainApp(App):
 
 if __name__ == '__main__':
     MainApp().run()
-
