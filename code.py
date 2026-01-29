@@ -1,3 +1,8 @@
+'''
+Codigo de LuisMSB 
+'''
+
+
 import kivy
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
@@ -5,7 +10,10 @@ from kivy.uix.button import Button
 from kivy.lang import Builder
 from kivy.config import Config
 
-#agregar despues el tamaño
+#Agregar un tamaño adaptado para celulares, si se abre en computadora, este tendra un limite
+
+Config.set ('graphics', 'width', 720)
+Config.set ('graphics', 'height', 1080)
 
 class Contenedor (BoxLayout):
     None
