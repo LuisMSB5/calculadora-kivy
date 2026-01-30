@@ -1,114 +1,146 @@
-
 <Contenedor>:
-
-
-    #propiedades del grid
+    # ✅ ESSENCIAL: cols define que es un GridLayout
     cols: 4
-    spacing: 10
-    padding: 5
-
-    ##########################
-    ####### columna 1 ########
-    ##########################
-
-    Button: 
-        id: button_7
-        text: "7"
-        
-    Button: 
-        id: button_8
-        text: "8"
-        
-    Button: 
-        id: button_9
-        text: "9"
-        
-    Button: 
-        id: button_borrar
-        text: "Borrar"
-        
-
-
-    ##########################
-    ####### columna 2 ########
-    ##########################
-
-    Button: 
-        id: button_4
-        text: "4"
-        
-    Button: 
-        id: button_5
-        text: "5"
-        
-    Button: 
-        id: button_6
-        text: "6"
-        
-    Button: 
-        id: button_sumar
-        text: "+"
-
-
-
-        
-    ##########################
-    ####### columna 3 ########
-    ##########################
-
-    Button: 
-        id: button_3
-        text: "3"
-        
-    Button: 
-        id: button_2
-        text: "2"
-        
-    Button: 
-        id: button_1
-        text: "1"
-        
-    Button: 
-        id: button_restar
-        text: "+"
-
-
-
-        
-    ##########################
-    ####### columna 4 ########
-    ##########################
-
-    Button: 
-        id: button_punto
-        text: "."
-        
-    Button: 
-        id: button_0
+    spacing: 8
+    padding: 8    
+    
+    ###########################
+    # PRIMERO: Pantalla (ocupa 4 columnas)
+    ###########################
+    TextInput:
+        id: pantalla
         text: "0"
-        
-    Button: 
-        id: button_dividir
+        rowspan: 4  # ✅ Ocupa toda la fila
+        font_size: '32sp'
+        halign: 'right'
+        readonly: True
+        background_color: 0.1, 0.1, 0.1, 1
+        foreground_color: 1, 1, 1, 1
+        multiline: False
+    
+    ###########################
+    # SEGUNDO: Botones normales
+    ###########################
+    
+    # Fila 1
+    Button:
+        text: "7"
+        font_size: '24sp'
+        background_color: 3, 3, 3, 1
+        color: 0, 0, 0, 1
+    
+    Button:
+        text: "8"
+        font_size: '24sp'
+        background_color: 3, 3, 3, 1
+        color: 0, 0, 0, 1
+    
+    Button:
+        text: "9"
+        font_size: '24sp'
+        background_color: 3, 3, 3, 1
+        color: 0, 0, 0, 1
+    
+    Button:
+        text: "C"
+        font_size: '24sp'
+        background_color: 3, 3, 3, 1
+        color: 0, 0, 0, 1
+    
+    # Fila 2
+    Button:
+        text: "4"
+        font_size: '24sp'
+        background_color: 3, 3, 3, 1
+        color: 0, 0, 0, 1
+    
+    Button:
+        text: "5"
+        font_size: '24sp'
+        background_color: 3, 3, 3, 1
+        color: 0, 0, 0, 1
+    
+    Button:
+        text: "6"
+        font_size: '24sp'
+        background_color: 3, 3, 3, 1
+        color: 0, 0, 0, 1
+    
+    Button:
+        text: "+"
+        font_size: '24sp'
+        background_color: 3, 3, 3, 1
+        color: 0, 0, 0, 1
+    
+
+    # Fila 3
+    Button:
+        text: "1"
+        font_size: '24sp'
+        background_color: 3, 3, 3, 1
+        color: 0, 0, 0, 1
+    
+    Button:
+        text: "2"
+        font_size: '24sp'
+        background_color: 3, 3, 3, 1
+        color: 0, 0, 0, 1
+    
+    Button:
+        text: "3"
+        font_size: '24sp'
+        background_color: 3, 3, 3, 1
+        color: 0, 0, 0, 1
+    
+    Button:
+        text: "-"
+        font_size: '24sp'
+        background_color: 3, 3, 3, 1
+        color: 0, 0, 0, 1
+    
+    # Fila 4
+    Button:
+        text: "."
+        font_size: '24sp'
+        background_color: 3, 3, 3, 1
+        color: 0, 0, 0, 1
+    
+    Button:
+        text: "0"
+        font_size: '24sp'
+        background_color: 3, 3, 3, 1
+        color: 0, 0, 0, 1
+    
+    Button:
         text: "/"
-        
-    Button: 
-        id: button_multiplicar
+        font_size: '24sp'
+        background_color: 3, 3, 3, 1
+        color: 0, 0, 0, 1
+    
+    Button:
         text: "*"
-
-
-        
-    ##########################
-    ####### columna 5 ########
-    ##########################
-
-    Button: 
+        font_size: '24sp'
+        background_color: 3, 3, 3, 1
+        color: 0, 0, 0, 1
+    
+    ###########################
+    # TERCERO: Botones grandes (última fila)
+    ###########################
+    
+    # ✅ RESET ocupa 2 columnas
+    Button:
         id: button_reset
-        text: "Reset"
-        cols: 2
-        
-    Button: 
+        text: "RESET"
+        colspan: 2  # ✅ COLSPAN FUNCIONANDO
+        font_size: '22sp'
+        background_color: 3, 3, 3, 1
+        color: 0, 0, 0, 1
+    
+    # ✅ = ocupa 2 columnas  
+    Button:
         id: button_enter
         text: "="
-        cols: 2
-        
-        
+        colspan: 2  # ✅ COLSPAN FUNCIONANDO
+        font_size: '32sp'
+        background_color: 204, 0, 0, 1
+        color: 1, 1, 1, 1
