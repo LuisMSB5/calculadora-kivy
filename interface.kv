@@ -1,146 +1,193 @@
 <Contenedor>:
-    # ✅ ESSENCIAL: cols define que es un GridLayout
+    
+    #propiedades del contenedor
     cols: 4
     spacing: 8
     padding: 8    
     
     ###########################
-    # PRIMERO: Pantalla (ocupa 4 columnas)
+    # Pantalla 
     ###########################
+    
     TextInput:
-        id: pantalla
-        text: "0"
-        rowspan: 4  # ✅ Ocupa toda la fila
+        id: pantalla  # ID para referencia
         font_size: '32sp'
         halign: 'right'
         readonly: True
-        background_color: 0.1, 0.1, 0.1, 1
-        foreground_color: 1, 1, 1, 1
+        background_color: 3, 3, 3, 1
+        foreground_color: 0, 0, 0, 1
         multiline: False
+        text: "0"
+        max_text_length: 3
     
     ###########################
-    # SEGUNDO: Botones normales
+    # Botones
     ###########################
+    
     
     # Fila 1
+    
     Button:
         text: "7"
         font_size: '24sp'
         background_color: 3, 3, 3, 1
         color: 0, 0, 0, 1
+        on_press: root.tecla_7() 
+    
     
     Button:
         text: "8"
         font_size: '24sp'
         background_color: 3, 3, 3, 1
         color: 0, 0, 0, 1
+        on_press: root.tecla_8()
+    
     
     Button:
         text: "9"
         font_size: '24sp'
         background_color: 3, 3, 3, 1
         color: 0, 0, 0, 1
+        on_press: root.tecla_9()
+    
     
     Button:
         text: "C"
         font_size: '24sp'
-        background_color: 3, 3, 3, 1
-        color: 0, 0, 0, 1
+        background_color: 0.5, 0.5, 10, 0.5
+        color: 1, 1, 1, 1
+        on_press: root.tecla_c()
     
+    
+    
+    
+
     # Fila 2
     Button:
         text: "4"
         font_size: '24sp'
         background_color: 3, 3, 3, 1
         color: 0, 0, 0, 1
+        on_press: root.tecla_4()
+    
     
     Button:
         text: "5"
         font_size: '24sp'
         background_color: 3, 3, 3, 1
         color: 0, 0, 0, 1
+        on_press: root.tecla_5()
+    
     
     Button:
         text: "6"
         font_size: '24sp'
         background_color: 3, 3, 3, 1
         color: 0, 0, 0, 1
+        on_press: root.tecla_6()
+    
     
     Button:
         text: "+"
         font_size: '24sp'
-        background_color: 3, 3, 3, 1
-        color: 0, 0, 0, 1
+        background_color: 0.5, 0.5, 10, 0.5
+        color: 1, 1, 1, 1
+        on_press: root.tecla_suma()
     
 
+    
+    
+    
     # Fila 3
+    
     Button:
         text: "1"
         font_size: '24sp'
         background_color: 3, 3, 3, 1
         color: 0, 0, 0, 1
+        on_press: root.tecla_1()
+    
     
     Button:
         text: "2"
         font_size: '24sp'
         background_color: 3, 3, 3, 1
         color: 0, 0, 0, 1
+        on_press: root.tecla_2()
+    
     
     Button:
         text: "3"
         font_size: '24sp'
         background_color: 3, 3, 3, 1
         color: 0, 0, 0, 1
+        on_press: root.tecla_3()
+    
     
     Button:
         text: "-"
         font_size: '24sp'
-        background_color: 3, 3, 3, 1
-        color: 0, 0, 0, 1
+        background_color: 0.5, 0.5, 10, 0.5
+        color: 1, 1, 1, 1
+        on_press: root.tecla_resta()
+    
+    
+    
+    
     
     # Fila 4
+    
     Button:
         text: "."
         font_size: '24sp'
         background_color: 3, 3, 3, 1
         color: 0, 0, 0, 1
+        on_press: root.tecla_punto()
+    
     
     Button:
         text: "0"
         font_size: '24sp'
         background_color: 3, 3, 3, 1
         color: 0, 0, 0, 1
+        on_press: root.tecla_0()
+    
     
     Button:
         text: "/"
         font_size: '24sp'
-        background_color: 3, 3, 3, 1
-        color: 0, 0, 0, 1
+        background_color: 0.5, 0.5, 10, 0.5
+        color: 1, 1, 1, 1
+        on_press: root.tecla_dividir()
+    
     
     Button:
         text: "*"
         font_size: '24sp'
-        background_color: 3, 3, 3, 1
-        color: 0, 0, 0, 1
+        background_color: 0.5, 0.5, 10, 0.5
+        color: 1, 1, 1, 1
+        on_press: root.tecla_multiplicar()
+    
     
     ###########################
-    # TERCERO: Botones grandes (última fila)
+    # Botones sobrantes
     ###########################
     
-    # ✅ RESET ocupa 2 columnas
     Button:
         id: button_reset
         text: "RESET"
-        colspan: 2  # ✅ COLSPAN FUNCIONANDO
+        colspan: 2 
         font_size: '22sp'
-        background_color: 3, 3, 3, 1
-        color: 0, 0, 0, 1
-    
-    # ✅ = ocupa 2 columnas  
+        background_color: 204, 0, 0, 1
+        color: 1, 1, 1, 1
+        on_press: root.tecla_reset()
+
+
     Button:
         id: button_enter
         text: "="
-        colspan: 2  # ✅ COLSPAN FUNCIONANDO
+        colspan: 2  
         font_size: '32sp'
         background_color: 204, 0, 0, 1
         color: 1, 1, 1, 1
+        on_press: root.tecla_enter()
