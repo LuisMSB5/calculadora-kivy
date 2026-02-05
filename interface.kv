@@ -1,193 +1,259 @@
+#contenedor para la pantalla
+
 <Contenedor>:
-    
-    #propiedades del contenedor
-    cols: 4
-    spacing: 8
-    padding: 8    
-    
-    ###########################
-    # Pantalla 
-    ###########################
-    
+
+    background_color: 1,1,1,1
+    orientation: 'vertical'
+
     TextInput:
-        id: pantalla  # ID para referencia
-        font_size: '32sp'
-        halign: 'right'
+        id: pantalla
+        text: "0"
         readonly: True
-        background_color: 3, 3, 3, 1
-        foreground_color: 0, 0, 0, 1
+        halign: 'right'
+        valign: 'bottom'      # 'top', 'middle', 'bottom'
+        size_hint: 1, 0.3
+        padding: 30,30,30,30
+        font_size: 30
+        bold: True
         multiline: False
-        text: "0"
-        max_text_length: 3
-    
-    ###########################
-    # Botones
-    ###########################
-    
-    
-    # Fila 1
-    
-    Button:
-        text: "7"
-        font_size: '24sp'
-        background_color: 3, 3, 3, 1
-        color: 0, 0, 0, 1
-        on_press: root.tecla_7() 
-    
-    
-    Button:
-        text: "8"
-        font_size: '24sp'
-        background_color: 3, 3, 3, 1
-        color: 0, 0, 0, 1
-        on_press: root.tecla_8()
-    
-    
-    Button:
-        text: "9"
-        font_size: '24sp'
-        background_color: 3, 3, 3, 1
-        color: 0, 0, 0, 1
-        on_press: root.tecla_9()
-    
-    
-    Button:
-        text: "C"
-        font_size: '24sp'
-        background_color: 0.5, 0.5, 10, 0.5
-        color: 1, 1, 1, 1
-        on_press: root.tecla_c()
-    
-    
-    
-    
-
-    # Fila 2
-    Button:
-        text: "4"
-        font_size: '24sp'
-        background_color: 3, 3, 3, 1
-        color: 0, 0, 0, 1
-        on_press: root.tecla_4()
-    
-    
-    Button:
-        text: "5"
-        font_size: '24sp'
-        background_color: 3, 3, 3, 1
-        color: 0, 0, 0, 1
-        on_press: root.tecla_5()
-    
-    
-    Button:
-        text: "6"
-        font_size: '24sp'
-        background_color: 3, 3, 3, 1
-        color: 0, 0, 0, 1
-        on_press: root.tecla_6()
-    
-    
-    Button:
-        text: "+"
-        font_size: '24sp'
-        background_color: 0.5, 0.5, 10, 0.5
-        color: 1, 1, 1, 1
-        on_press: root.tecla_suma()
-    
-
-    
-    
-    
-    # Fila 3
-    
-    Button:
-        text: "1"
-        font_size: '24sp'
-        background_color: 3, 3, 3, 1
-        color: 0, 0, 0, 1
-        on_press: root.tecla_1()
-    
-    
-    Button:
-        text: "2"
-        font_size: '24sp'
-        background_color: 3, 3, 3, 1
-        color: 0, 0, 0, 1
-        on_press: root.tecla_2()
-    
-    
-    Button:
-        text: "3"
-        font_size: '24sp'
-        background_color: 3, 3, 3, 1
-        color: 0, 0, 0, 1
-        on_press: root.tecla_3()
-    
-    
-    Button:
-        text: "-"
-        font_size: '24sp'
-        background_color: 0.5, 0.5, 10, 0.5
-        color: 1, 1, 1, 1
-        on_press: root.tecla_resta()
-    
-    
-    
-    
-    
-    # Fila 4
-    
-    Button:
-        text: "."
-        font_size: '24sp'
-        background_color: 3, 3, 3, 1
-        color: 0, 0, 0, 1
-        on_press: root.tecla_punto()
-    
-    
-    Button:
-        text: "0"
-        font_size: '24sp'
-        background_color: 3, 3, 3, 1
-        color: 0, 0, 0, 1
-        on_press: root.tecla_0()
-    
-    
-    Button:
-        text: "/"
-        font_size: '24sp'
-        background_color: 0.5, 0.5, 10, 0.5
-        color: 1, 1, 1, 1
-        on_press: root.tecla_dividir()
-    
-    
-    Button:
-        text: "*"
-        font_size: '24sp'
-        background_color: 0.5, 0.5, 10, 0.5
-        color: 1, 1, 1, 1
-        on_press: root.tecla_multiplicar()
-    
-    
-    ###########################
-    # Botones sobrantes
-    ###########################
-    
-    Button:
-        id: button_reset
-        text: "RESET"
-        colspan: 2 
-        font_size: '22sp'
-        background_color: 204, 0, 0, 1
-        color: 1, 1, 1, 1
-        on_press: root.tecla_reset()
+        
 
 
-    Button:
-        id: button_enter
-        text: "="
-        colspan: 2  
-        font_size: '32sp'
-        background_color: 204, 0, 0, 1
-        color: 1, 1, 1, 1
-        on_press: root.tecla_enter()
+        #fondo azul y fuente blanca
+        background_color: 0,0.1,0.2,1
+        foreground_color: 1,1,1,1
+
+
+    #contenedor para los botones
+
+    GridLayout:
+
+        cols: 4
+
+        
+        #######
+        #fila 1
+        #######
+        
+        Button:
+            text: "7"
+            font_size: 20
+            bold: True
+            on_press: root.agregar_caracter("7")
+            
+            
+            #color branco y fuente negra
+            background_color: 3,3,3,1
+            color: 0,0,0,1
+
+        
+        Button:
+            text: "8"
+            font_size: 20
+            bold: True
+            on_press: root.agregar_caracter("8")
+            
+                        
+            #color branco y fuente negra
+            background_color: 3,3,3,1
+            color: 0,0,0,1
+        
+        Button:
+            text: "9"
+            font_size: 20
+            bold: True
+            on_press: root.agregar_caracter("9")
+
+            #color branco y fuente negra
+            background_color: 3,3,3,1
+            color: 0,0,0,1
+
+
+        Button:
+            text: "Del"
+            font_size: 20
+            bold: True
+            on_press: root.quitar_caracter()
+
+            #fondo azul y fuente blanca
+            background_color: 0,0.1,0.8,1
+            foreground_color: 1,1,1,1
+    
+
+
+
+        #######
+        #fila 2
+        #######
+
+        Button:
+            text: "4"
+
+            #color branco y fuente negra
+            background_color: 3,3,3,1
+            color: 0,0,0,1
+            font_size: 20
+            bold: True
+            on_press: root.agregar_caracter("4")
+        
+        Button:
+            text: "5"
+
+            #color branco y fuente negra
+            background_color: 3,3,3,1
+            color: 0,0,0,1
+            font_size: 20
+            bold: True
+            on_press: root.agregar_caracter("5")
+        
+        Button:            
+            text: "6"
+            font_size: 20
+            bold: True
+            on_press: root.agregar_caracter("6")
+
+            #color branco y fuente negra
+            background_color: 3,3,3,1
+            color: 0,0,0,1
+
+        Button:
+            text: "+"
+            font_size: 20
+            bold: True
+            on_press: root.agregar_caracter("+")
+
+            #color branco y fuente negra
+            background_color: 3,3,3,1
+            color: 0,0,0,1
+
+
+
+
+
+        #######
+        #fila 3
+        #######
+
+        Button:
+            text: "1"
+            font_size: 20
+            bold: True
+            on_press: root.agregar_caracter("1")
+
+            #color branco y fuente negra
+            background_color: 3,3,3,1
+            color: 0,0,0,1
+
+
+        Button:
+            text: "2"
+            font_size: 20
+            bold: True
+            on_press: root.agregar_caracter("2")
+
+            #color branco y fuente negra
+            background_color: 3,3,3,1
+            color: 0,0,0,1
+
+
+        Button:
+            text: "3"
+            font_size: 20
+            bold: True
+            on_press: root.agregar_caracter("3")
+
+            #color branco y fuente negra
+            background_color: 3,3,3,1
+            color: 0,0,0,1
+
+
+        Button:
+            text: "-"
+            font_size: 20
+            bold: True
+            on_press: root.agregar_caracter("-")
+
+            #color branco y fuente negra
+            background_color: 3,3,3,1
+            color: 0,0,0,1
+
+
+
+
+        #######
+        #fila 4
+        #######
+
+        Button:
+            text: "."
+            font_size: 20
+            bold: True
+            on_press: root.agregar_caracter(".")
+
+            #color branco y fuente negra
+            background_color: 3,3,3,1
+            color: 0,0,0,1
+
+
+        Button:
+            text: "0"
+            font_size: 20
+            bold: True
+            on_press: root.agregar_caracter("0")
+
+            #color branco y fuente negra
+            background_color: 3,3,3,1
+            color: 0,0,0,1
+
+
+        Button:
+            text: "/"
+            font_size: 20
+            bold: True
+            on_press: root.agregar_caracter("/")
+
+            #color branco y fuente negra
+            background_color: 3,3,3,1
+            color: 0,0,0,1
+
+
+        Button:
+            text: "*"
+            font_size: 20
+            bold: True
+            on_press: root.agregar_caracter("*")
+
+            #color branco y fuente negra
+            background_color: 3,3,3,1
+            color: 0,0,0,1
+
+
+
+    #contenedor para los ultimos 2 botones
+    GridLayout:
+
+        cols: 2
+        size_hint: 1, 0.3
+
+        Button:
+            text: "C"
+            font_size: 30
+            bold: True
+            on_press: root.limpiar()
+
+
+            #fondo azul y fuente blanca
+            background_color: 0,0.1,0.8,1
+            foreground_color: 1,1,1,1
+
+        Button:
+            text: "="
+            font_size: 30
+            bold: True
+            on_press: root.calcular()
+
+    
+            #fondo azul y fuente blanca
+            background_color: 0,0.1,0.8,1
+            foreground_color: 1,1,1,1
+                
