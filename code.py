@@ -12,7 +12,7 @@ from kivy.properties import NumericProperty
 from kivy.properties import StringProperty
 
 #llamar el documento kv
-Builder.load_file("kv.kv")
+Builder.load_file("interface.kv")
 
 #definir el tamano inicial de la calculadora
 Config.set ('graphics', 'width', 520)
